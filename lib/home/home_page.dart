@@ -12,7 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-final  List<Task> _tasks= [];
+final  List<Todo> _tasks= [];
 
   void _naviateToAddPage() async {
     final result = await Navigator.push(
@@ -21,7 +21,7 @@ final  List<Task> _tasks= [];
     );
     if (result != null && result.toString().isNotEmpty) {
       setState(() {
-    _tasks.add(Task(title: result.toString())); 
+    _tasks.add(Todo(title: result.toString(), date: DateTime.now())); 
       });
     }
   }
